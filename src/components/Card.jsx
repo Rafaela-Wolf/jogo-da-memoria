@@ -1,6 +1,8 @@
-const Card = () => {
+const Card = ({ card, onClick }) => {
   return (
-    <div>Card</div>
+    <div className={`card ${card.isFlipped ? "flipped" : ""}`} onClick={() => onClick(card)}>
+      {card.isFlipped ? card.value : "?"}
+    </div>
   )
 }
 
